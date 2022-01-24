@@ -43,6 +43,8 @@ def draw_hsv(flow):
 
 cap = cv2.VideoCapture(0)
 
+#cap = cv2.VideoCapture("C:/Users/javierberna/OneDrive - grupotrc.com/Escritorio/Videos/MOT20-01.mp4")
+
 suc, prev = cap.read()
 prevgray = cv2.cvtColor(prev, cv2.COLOR_BGR2GRAY)
 

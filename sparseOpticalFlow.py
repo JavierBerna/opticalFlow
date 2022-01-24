@@ -21,6 +21,8 @@ frame_idx = 0
 
 cap = cv2.VideoCapture(0)
 
+#cap = cv2.VideoCapture("C:/Users/javierberna/OneDrive - grupotrc.com/Escritorio/Videos/MOT20-03.mp4")
+
 
 while True:
 
@@ -83,7 +85,10 @@ while True:
     # End time
     end = time.time()
     # calculate the FPS for current frame detection
-    fps = 1 / (end-start)
+    if end - start == 0:
+        fps = 1 / ((end+1)-start)
+    else:
+        fps = 1 / (end-start)
     
     # Show Results
     cv2.putText(img, f"{fps:.2f} FPS", (20, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
